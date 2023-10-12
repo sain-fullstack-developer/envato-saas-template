@@ -31,8 +31,8 @@ const About = () => {
 					{imageProducts.map((image, index) => {
 						return (
 							<ImageCard
-								priority={true}
 								key={index}
+								priority={true}
 								imageUrl={image.product}
 								isImageOnly
 							/>
@@ -93,6 +93,7 @@ const About = () => {
 					{aboutTeamData.map((team, index) => {
 						return (
 							<ImageCard
+								key={index}
 								team={true}
 								imageUrl={team.logo}
 								title={team.fullname}

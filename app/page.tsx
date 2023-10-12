@@ -33,19 +33,17 @@ export default function Home() {
 			<section className="w-full lg:min-h-screen place-items-center flex flex-col gap-16 relative">
 				<HeadingText
 					mainHeading="The Best Software to Grow your Sales and Services"
-					description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
-					children={
-						<CustomTextField
-							overlayButton={true}
-							inputClass="lg:max-w-[500px]"
-							placeholder="enter Your Email"
-							title="Email Input"
-							value={email}
-							name="email"
-							onChange={handleEmailChange}
-						/>
-					}
-				/>
+					description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.">
+					<CustomTextField
+						overlayButton={true}
+						inputClass="lg:max-w-[500px]"
+						placeholder="enter Your Email"
+						title="Email Input"
+						value={email}
+						name="email"
+						onChange={handleEmailChange}
+					/>
+				</HeadingText>
 				<Image
 					src="/home-dashboard.svg"
 					width={1024}
@@ -104,13 +102,11 @@ export default function Home() {
 					<HeadingText
 						placeLeft
 						title="To upscale your business to the next level"
-						description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua invidunt ut labore."
-						children={
-							<div>
-								<Button>Get Free trail</Button>
-							</div>
-						}
-					/>
+						description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua invidunt ut labore.">
+						<div>
+							<Button>Get Free trail</Button>
+						</div>
+					</HeadingText>
 				</div>
 				<Image
 					src={Images.conversion}

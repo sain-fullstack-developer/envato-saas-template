@@ -17,14 +17,12 @@ const Product = (props: Props) => {
 				<HeadingText
 					placeLeft
 					mainHeading="Grow your Sales and Services"
-					description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-					children={
-						<div className="flex gap-4">
-							<Button>Get Started</Button>
-							<Button outline={true}>Contact us</Button>
-						</div>
-					}
-				/>
+					description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+					<div className="flex gap-4">
+						<Button>Get Started</Button>
+						<Button outline={true}>Contact us</Button>
+					</div>
+				</HeadingText>
 				<Image
 					src="/home-dashboard.svg"
 					width={1024}

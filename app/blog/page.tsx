@@ -42,9 +42,8 @@ const Blog = (props: Props) => {
 				<div className="grid grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6 md:gap-y-16">
 					{blogPostsData.map((card, index) => {
 						return (
-							<Link href={`blog/${index}`}>
+							<Link key={index} href={`blog/${index}`}>
 								<ImageCard
-									key={index}
 									imageUrl={card.logo}
 									title={card.title}
 									text={card.text}

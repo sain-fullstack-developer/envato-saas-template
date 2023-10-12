@@ -29,6 +29,7 @@ const Pricing = (props: Props) => {
 					{pricingCardList.map((price, index) => {
 						return (
 							<PricingCard
+								key={index}
 								iconSrc={price.logo}
 								iconAltText={`pricing-reference-logo-${index}`}
 								title={price.title}
