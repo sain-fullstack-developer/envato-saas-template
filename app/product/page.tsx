@@ -35,6 +35,7 @@ const Product = (props: Props) => {
 				{logoImages.map((list, index) => {
 					return (
 						<Image
+							key={index}
 							src={list.logo}
 							alt={`company-logos-${index}`}
 							width={196}
@@ -49,6 +50,7 @@ const Product = (props: Props) => {
 					{productServiceData.map((service, index) => {
 						return (
 							<FeaturesCard
+								key={index}
 								logoUrl={service.logo}
 								title={service.title}
 								description={service.text}

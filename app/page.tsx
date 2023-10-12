@@ -119,6 +119,7 @@ export default function Home() {
 				{logoImages.map((list, index) => {
 					return (
 						<Image
+						key={index}
 							src={list.logo}
 							alt={`company-logos-${index}`}
 							width={196}
