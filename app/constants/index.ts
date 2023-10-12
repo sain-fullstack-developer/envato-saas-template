@@ -26,19 +26,79 @@ export const footerLists = [
 
 export const pricingCardList = [
 	{
-		feature: "Limited Project",
+		title: "Regular",
+		subHeading: "Start Plan",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
+		price: "Free",
+		offerDuration: "For Limited Period",
+		logo: Images.pricing1,
+		fetures: [
+			{
+				feature: "Limited Project",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+		],
 	},
 	{
-		feature: "Regular Support Business",
+		title: "Plantinum",
+		subHeading: "Start Plan",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
+		price: "$342",
+		offerDuration: "For Limited Period",
+		logo: Images.pricing2,
+		fetures: [
+			{
+				feature: "Limited Project",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+		],
 	},
 	{
-		feature: "Regular Support Business",
-	},
-	{
-		feature: "Regular Support Business",
-	},
-	{
-		feature: "Regular Support Business",
+		title: "Standard",
+		subHeading: "Start Plan",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
+		price: "$234",
+		offerDuration: "For Limited Period",
+		logo: Images.pricing3,
+		fetures: [
+			{
+				feature: "Limited Project",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+			{
+				feature: "Regular Support Business",
+			},
+		],
 	},
 ];
 
@@ -151,4 +211,237 @@ export const feedbackCardData = [
 		designation: "CTO",
 		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
 	},
+];
+
+export const productServiceData = [
+	{
+		logo: Images.productservice1,
+		title: "Security and privacy",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.productservice2,
+		title: "Built-in AI features",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.productservice3,
+		title: "Collaborate with others",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.productservice4,
+		title: "Real time sync",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.productservice5,
+		title: "Built-in AI features",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.productservice6,
+		title: "Easy notes organization",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+];
+
+export const contactData = [
+	{
+		logo: Images.security,
+		title: "+ 1800 145 276",
+		text: "Free support",
+	},
+
+	{
+		logo: Images.security,
+		title: "finsweet@gmail.com",
+		text: "Help Email support",
+	},
+	{
+		logo: Images.security,
+		title: "sales@finsweet.com",
+		text: "Sales Enquiry",
+	},
+];
+export const aboutCorporateValuesData = [
+	{
+		logo: Images.security,
+		title: "Best in Class",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.security,
+		title: "Authenticity",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.security,
+		title: "Email Support",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.security,
+		title: "Discounts Available",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.security,
+		title: "Powerful Marketing",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+	{
+		logo: Images.security,
+		title: "Inventory management",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+	},
+];
+export const aboutTeamData = [
+	{
+		logo: Images.aboutteamprofile1,
+		fullname: "Blake Matthews",
+		designation: "CEO & Co-Founder",
+	},
+	{
+		logo: Images.aboutteamprofile2,
+		fullname: "Jack Newman",
+		designation: "CTO",
+	},
+	{
+		logo: Images.aboutteamprofile3,
+		fullname: "Sarinia Martins",
+		designation: "Marketing",
+	},
+	{
+		logo: Images.aboutteamprofile4,
+		fullname: "Spencer Wright",
+		designation: "Project Management",
+	},
+	{
+		logo: Images.aboutteamprofile5,
+		fullname: "Caroline Ming",
+		designation: "CEO & Co-Founder",
+	},
+	{
+		logo: Images.aboutteamprofile6,
+		fullname: "Anna Mills",
+		designation: "CEO & Co-Founder",
+	},
+];
+
+export const blogPostsData = [
+	{
+		logo: Images.blogPostCard1,
+		title: "7 Automation use cases that foster excellent CX",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonum",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard2,
+		title: "Managing Rails application secrets with encrypted credentials",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard3,
+		title: "Account-based marketing: Data-driven selection for ABM success",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard4,
+		title: " How to Calculate Your SaaS Gross Margin",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard5,
+		title:
+			"The Five Main Benefits of Automating your Accounts Receivable Process",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard6,
+		title: "How to Make Data-driven Pricing Decisions",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard7,
+		title: "How to Make Recurring Invoicing More Efficient",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard8,
+		title: "How to Reduce Checkout Abandonment for more Conversions",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+	{
+		logo: Images.blogPostCard9,
+		title: "10 Customer Retention Strategies for better Dwell time",
+		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.",
+		author: "Luke Matthews l  November 8, 2021",
+		headlineTitle1: "This is a blog post headline",
+		headlineDescription1:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+		headlineTitle2: "This is a small blog post headline",
+		headlineDescription2:
+			"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy",
+	},
+];
+export const imageProducts = [
+	{ product: Images.remoteCall1 },
+	{ product: Images.remoteCall2 },
+	{ product: Images.remoteCall3 },
 ];

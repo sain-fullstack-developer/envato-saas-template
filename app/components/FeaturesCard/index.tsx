@@ -18,10 +18,14 @@ const FeaturesCard = (props: Props) => {
 				width={48}
 				height={48}
 				alt={altText}
-				className="cursor-pointer"
+				className="cursor-pointer m-auto sm:m-0"
 			/>
-			<p className="text-3xl font-bold">{title}</p>
-			<p className="text-paragraph leading-paragraph">{description}</p>
+			<p className="text-xl sm:text-3xl font-bold text-center sm:text-left">
+				{title}
+			</p>
+			<p className="text-paragraph leading-paragraph text-center sm:text-left">
+				{description}
+			</p>
 		</div>
 	);
 };

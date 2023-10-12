@@ -5,6 +5,7 @@ import React from "react";
 type Props = {
 	isImageOnly?: boolean;
 	team?: boolean;
+	priority?: boolean;
 	imageUrl: string;
 	author?: string;
 	title?: string;
@@ -21,6 +22,7 @@ const ImageCard = (props: Props) => {
 		title,
 		text,
 		altText,
+		priority = false,
 	} = props;
 	return (
 		<div
@@ -39,6 +41,7 @@ const ImageCard = (props: Props) => {
 						isImageOnly ? "rounded-3xl" : team ? "rounded-xl" : "rounded-2xl"
 					}  left-0`}
 					alt={altText ? altText : "card-reference-pic"}
+					priority={priority}
 				/>
 			</div>
 

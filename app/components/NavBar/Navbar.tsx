@@ -20,7 +20,8 @@ const Navbar = (props: Props) => {
 	};
 
 	return (
-		<header className="flex justify-between py-3 px-10 sm:px-20 sticky top-0 left-0 w-full z-40">
+		<header
+			className={`flex justify-between py-3 px-10 sm:px-20 sticky top-0 left-0 w-full z-40`}>
 			<h2 className={`text-h4 leading-h2`}>Enhance</h2>
 			{!toggleMenuList && (
 				<div

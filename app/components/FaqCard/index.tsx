@@ -19,7 +19,11 @@ const FaqCard = (props: Props) => {
 
 	return (
 		<div
-			className="cursor-pointer bg-white rounded-3xl p-10 w-full"
+			className={
+				openAnswer
+					? `cursor-pointer bg-white rounded-3xl p-6 sm:p-10 w-full h-auto`
+					: `cursor-pointer bg-white rounded-3xl p-6 sm:p-10 w-full h-auto sm:h-32`
+			}
 			onClick={toggleAnswer}>
 			<div className=" mb-6">
 				<div className="flex justify-between items-center">

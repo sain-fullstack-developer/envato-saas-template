@@ -34,12 +34,14 @@ const Footer = (props: Props) => {
 			</div>
 			<div className="grid lg:grid-cols-3 gap-4 pt-14 place-items-center">
 				<div className="h-[1px] bg-white/40 w-full"></div>
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<p className="text-white/40 text-xs">© Copyright Finsweet 2022</p>
-					<BiLogoFacebookCircle className="text-xl text-white/40" />
-					<AiFillTwitterCircle className="text-xl text-white/40" />
-					<AiOutlineInstagram className="text-xl text-white/40" />
-					<CiLinkedin className="text-xl text-white/40" />
+					<div className="flex  sm:flex-row gap-4">
+						<BiLogoFacebookCircle className="text-xl text-white/40" />
+						<AiFillTwitterCircle className="text-xl text-white/40" />
+						<AiOutlineInstagram className="text-xl text-white/40" />
+						<CiLinkedin className="text-xl text-white/40" />
+					</div>
 				</div>
 				<div className="h-[1px] bg-white/40 w-full"></div>
 			</div>

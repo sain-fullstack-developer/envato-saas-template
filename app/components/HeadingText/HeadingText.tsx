@@ -16,11 +16,11 @@ const HeadingText = (props: Props) => {
 		<div
 			className={`${
 				placeLeft
-					? "flex flex-col w-full text-left"
-					: "flex flex-col w-full text-center"
+					? "flex flex-col w-full max-w-[800px] m-auto text-center sm:text-left"
+					: "flex flex-col w-full max-w-[800px] m-auto text-center"
 			}`}>
 			{caption && (
-				<h4 className="text-headingLabel leading-headingLabel text-gradient-primary pb-6">
+				<h4 className="text-lg sm:text-headingLabel leading-headingLabel text-gradient-primary pb-6">
 					{caption}
 				</h4>
 			)}
@@ -30,7 +30,7 @@ const HeadingText = (props: Props) => {
 				</h1>
 			) : (
 				<h2
-					className={`text-4xl 
+					className={`text-2xl 
 					
 					 sm:text-h2 sm:leading-h2 font-bold pb-8`}>
 					{title}

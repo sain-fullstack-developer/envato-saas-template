@@ -37,3 +37,6 @@ body {
 	);
 	filter: blur(350px);
 }
+.custom-grid-cols {
+	grid-template-columns: 0.5fr 1fr;
+}

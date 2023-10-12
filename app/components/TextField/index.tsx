@@ -14,6 +14,7 @@ type Props = {
 	errorMessage?: string;
 	required?: boolean;
 	placeholder: string;
+	overlayButton?: boolean;
 };
 
 const CustomTextField = (props: Props) => {
@@ -27,6 +28,7 @@ const CustomTextField = (props: Props) => {
 		errorMessage,
 		required = false,
 		placeholder,
+		overlayButton,
 	} = props;
 
 	return (
@@ -44,9 +46,11 @@ const CustomTextField = (props: Props) => {
 						errorBorder ? "border-red-500" : ""
 					}`}
 				/>
-				<Button className="absolute top-3 right-2 lg:right-40 w-32">
-					Get Free trail
-				</Button>
+				{overlayButton && (
+					<Button className="absolute top-3 right-2 lg:right-40 w-32">
+						Get Free trail
+					</Button>
+				)}
 			</div>
 			{errorMessage && errorMessage !== "" && (
 				<Image

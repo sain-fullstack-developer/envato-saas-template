@@ -18,14 +18,16 @@ const Button = (props: Props) => {
 				<button
 					role="button"
 					type={type ? type : "button"}
-					className={`${className} bg-none border-[2px] border-tertiary hover:bg-primary text-primary hover:text-white font-medium text-base p-2 rounded-xl outline-none cursor-pointer`}>
+					className={`${
+						className ? className : "w-[128px]"
+					} bg-none border-[2px] border-tertiary hover:bg-primary text-primary hover:text-white font-medium text-base p-2 rounded-xl outline-none cursor-pointer`}>
 					{children}
 				</button>
 			) : (
 				<button
 					role="button"
 					type={type ? type : "button"}
-					className={`w-full ${
+					className={`${
 						className ? className : "w-[128px]"
 					} bg-primary border-none  hover:bg-[#313852] text-white font-medium text-base p-2 rounded-xl outline-none cursor-pointer`}>
 					{children}

@@ -1,24 +1,16 @@
+"use client";
 import React, { ChangeEvent } from "react";
 import HeadingText from "../HeadingText/HeadingText";
 import CustomTextField from "../TextField";
 import Button from "../Button/Button";
 
-type Props = {
-	fullname: string;
-	companyname: string;
-	workEmail: string;
-	subject: string;
-	message: string;
-};
-
-const DropMessageForm = (props: Props) => {
-	const { fullname, companyname, workEmail, subject, message } = props;
+const DropMessageForm = () => {
 	const [messageDetails, setMessageDetails] = React.useState({
-		fullname,
-		companyname,
-		workEmail,
-		subject,
-		message,
+		fullname: "",
+		companyname: "",
+		workEmail: "",
+		subject: "",
+		message: "",
 	});
 
 	const handleChange = (

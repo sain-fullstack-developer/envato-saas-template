@@ -20,7 +20,7 @@ const IconText = (props: Props) => {
 				alt={iconAltText}
 				className="cursor-pointer"
 			/>
-			<div>
+			<div className="text-center sm:text-left">
 				{title && (
 					<h4 className="text-h4 leading-h4 pb-2 font-bold">{title}</h4>
 				)}

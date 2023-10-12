@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 type Props = {
 	title: string;
 	subTitle: string;
-	pricingCardList: [{ feature: string }];
+	pricingCardList: any[];
 	description: string;
 	price: string;
 	billing: string;
@@ -27,7 +27,7 @@ const PricingCard = (props: Props) => {
 		iconAltText,
 	} = props;
 	return (
-		<div className=" p-6 sm:p-12 bg-gradient-blue w-full h-[714px] rounded-3xl">
+		<div className=" p-6 sm:p-12 bg-gradient-blue w-full min-h-[714px] rounded-3xl">
 			<div className="flex flex-col gap-8">
 				<div className="">
 					<IconText
@@ -41,7 +41,7 @@ const PricingCard = (props: Props) => {
 				{pricingCardList?.map((price, index) => {
 					return (
 						<>
-							<p className="flex gap-2 items-center">
+							<p className="flex gap-2 items-center font-bold">
 								<Image
 									src={Images?.done}
 									width={24}

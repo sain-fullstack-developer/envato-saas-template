@@ -20,6 +20,7 @@ import {
 	logoImages,
 } from "./constants";
 import Images from "./constants/Images";
+import ReadyToGrow from "./components/ReadyToGrow";
 
 export default function Home() {
 	const [email, setEmail] = React.useState("");
@@ -28,21 +29,14 @@ export default function Home() {
 	};
 	return (
 		<main
-			className={`flex min-h-screen flex-col gap-y-32 items-center justify-between p-8 sm:p-14 md:p-24`}>
-			<section className="w-full md:max-w-[800px] lg:min-h-screen place-items-center flex flex-col gap-16 relative">
-				<Image
-					src={Images.gradientBg}
-					className="absolute inset-0 tranform"
-					width={800}
-					height={800}
-					alt="gradient-background"
-				/>
-
+			className={`flex min-h-screen flex-col gap-y-32 items-center justify-center p-8 sm:p-14 md:p-24`}>
+			<section className="w-full lg:min-h-screen place-items-center flex flex-col gap-16 relative">
 				<HeadingText
 					mainHeading="The Best Software to Grow your Sales and Services"
 					description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."
 					children={
 						<CustomTextField
+							overlayButton={true}
 							inputClass="lg:max-w-[500px]"
 							placeholder="enter Your Email"
 							title="Email Input"
@@ -61,12 +55,11 @@ export default function Home() {
 				/>
 			</section>
 			<section className="flex flex-col gap-6">
-				<div className="w-full md:max-w-[800px] m-auto">
-					<HeadingText
-						caption="High-quality"
-						title="We have the Best Solution for your Business"
-					/>
-				</div>
+				<HeadingText
+					caption="High-quality"
+					title="We have the Best Solution for your Business"
+				/>
+
 				<div className="bg-tertiary rounded-3xl p-8 sm:p-12 md:p-16 gap-8 grid sm:grid-cols-2 lg:grid-cols-3">
 					{bestSolutionData.map((list, index) => {
 						return (
@@ -106,7 +99,7 @@ export default function Home() {
 					/>
 				</div>
 			</section>
-			<section className="grid gap-20 md:grid-cols-2 w-screen bg-tertiary z-0 p-8 sm:p-14 md:p-24">
+			<section className="grid gap-20 lg:grid-cols-2 w-full rounded-3xl bg-tertiary z-0 p-8 sm:p-14 md:p-24">
 				<div className="">
 					<HeadingText
 						placeLeft
@@ -160,7 +153,7 @@ export default function Home() {
 				</div>
 			</section>
 			<section className="flex flex-col">
-				<HeadingText title="Feature" />
+				<HeadingText title="Features" />
 				<div className="bg-tertiary rounded-3xl p-8 sm:p-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
 					{featuresCardData.map((feature, index) => {
 						return (
@@ -193,20 +186,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="w-full md:max-w-[800px] relative">
-				<Image
-					src={Images.gradientBg}
-					className="absolute inset-0 tranform"
-					width={800}
-					height={800}
-					alt="gradient-background"
-				/>
-				<HeadingText
-					title="Are you ready to grow your business with us?"
-					description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy."
-					children={<Button className="m-auto w-32">View Pricing</Button>}
-				/>
-			</section>
+			<ReadyToGrow />
 		</main>
 	);
 }
