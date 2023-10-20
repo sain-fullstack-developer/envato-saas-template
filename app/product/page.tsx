@@ -50,13 +50,8 @@ const Product = (props: Props) => {
 				{...whileInviewFadeSlide}>
 				{logoImages.map((list, index) => {
 					return (
-						<div className="relative w-[196px] h-32">
-							<Image
-								key={index}
-								src={list.logo}
-								alt={`company-logos-${index}`}
-								fill
-							/>
+						<div key={index} className="relative w-[196px] h-32">
+							<Image src={list.logo} alt={`company-logos-${index}`} fill />
 						</div>
 					);
 				})}
