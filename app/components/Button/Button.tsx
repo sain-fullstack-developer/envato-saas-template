@@ -1,35 +1,37 @@
 "use client";
 import React from "react";
-import { useTheme } from "next-themes";
 
 type Props = {
 	className?: string;
 	children: any;
 	type?: "button" | "reset" | "submit" | undefined;
 	outline?: Boolean;
+	onClick?: () => void;
 };
 
 const Button = (props: Props) => {
-	const { className, children, type, outline } = props;
-	const { theme } = useTheme();
+	const { className, children, type, outline, onClick } = props;
+
 	return (
 		<>
 			{outline ? (
 				<button
 					role="button"
 					type={type ? type : "button"}
+					onClick={onClick}
 					className={`${
 						className ? className : "w-[128px]"
-					} bg-none border-[2px] border-tertiary hover:bg-primary text-primary hover:text-white font-medium text-base p-2 rounded-xl outline-none cursor-pointer`}>
+					} bg-none border-[2px] border-tertiary dark:border-tertiary hover:bg-primary hover:text-white font-medium text-base p-2 rounded-xl outline-none cursor-pointer`}>
 					{children}
 				</button>
 			) : (
 				<button
 					role="button"
 					type={type ? type : "button"}
+					onClick={onClick}
 					className={`${
 						className ? className : "w-[128px]"
-					} bg-primary border-none  hover:bg-[#313852] text-white font-medium text-base p-2 rounded-xl outline-none cursor-pointer`}>
+					} bg-primary dark:bg-tertiary text-white dark:text-primary border-none dark:hover:bg-tertiary/60  hover:bg-[#313852] font-medium text-base p-2 rounded-xl outline-none cursor-pointer`}>
 					{children}
 				</button>
 			)}

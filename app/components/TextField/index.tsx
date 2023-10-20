@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import Button from "../Button/Button";
+import Link from "next/link";
 
 type Props = {
 	onChange: (event: any) => void;
@@ -15,6 +16,7 @@ type Props = {
 	required?: boolean;
 	placeholder: string;
 	overlayButton?: boolean;
+	customBackground?: boolean;
 };
 
 const CustomTextField = (props: Props) => {
@@ -29,6 +31,7 @@ const CustomTextField = (props: Props) => {
 		required = false,
 		placeholder,
 		overlayButton,
+		customBackground,
 	} = props;
 
 	return (
@@ -42,14 +45,18 @@ const CustomTextField = (props: Props) => {
 					value={value}
 					name={name}
 					required={required}
-					className={`${inputClass}  bg-white outline-none rounded-lg py-5 px-6 w-full shadow-sm ${
+					className={`${inputClass} ${
+						customBackground && "text-primary"
+					}  bg-white outline-none rounded-lg py-5 px-6 w-full shadow-sm ${
 						errorBorder ? "border-red-500" : ""
 					}`}
 				/>
 				{overlayButton && (
-					<Button className="absolute top-3 right-2 lg:right-40 w-32">
-						Get Free trail
-					</Button>
+					<Link href="/pricing">
+						<Button className="absolute top-3 right-2 lg:right-40 w-32">
+							Get Free trail
+						</Button>
+					</Link>
 				)}
 			</div>
 			{errorMessage && errorMessage !== "" && (

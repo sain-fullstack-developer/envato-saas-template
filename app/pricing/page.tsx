@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeadingText from "../components/HeadingText/HeadingText";
 import Button from "../components/Button/Button";
@@ -5,22 +6,50 @@ import { faqCardData, pricingCardList } from "../constants";
 import PricingCard from "../components/PricingCard";
 import FaqCard from "../components/FaqCard";
 import ReadyToGrow from "../components/ReadyToGrow";
+import { motion } from "framer-motion";
+import {
+	animatingFadeInout,
+	whileInviewFadeSlide,
+} from "../constants/FramerAnimations";
 
 type Props = {};
 
 const Pricing = (props: Props) => {
+	const [selectedMonthly, setSelectedMonthly] = React.useState(true);
+	const [selectedYearly, setSelectedYearly] = React.useState(false);
+	const [cardSelected, setCardSelected] = React.useState(1);
+	function handlePriceCardClick(index: number) {
+		setCardSelected(index);
+	}
 	return (
-		<main
-			className={`flex min-h-screen flex-col gap-y-32 items-center justify-between p-8 sm:p-14 lg:p-24`}>
-			<section className="flex flex-col gap-12">
+		<motion.main
+			className={`flex min-h-screen flex-col gap-y-32 items-center justify-between p-8 sm:p-14 lg:p-24`}
+			{...animatingFadeInout}>
+			<motion.section
+				className="flex flex-col gap-12"
+				{...whileInviewFadeSlide}>
 				<div className="justify-items-start">
 					<HeadingText
 						title="Pricing plans that suit you"
 						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
 						<div className="bg-tertiary rounded-3xl p-2 flex justify-around w-1/2 m-auto">
-							<Button>Monthly</Button>
-							<Button outline={true}>
-								<b>Yearly</b>
+							<Button
+								onClick={() => {
+									setSelectedMonthly(true);
+									setSelectedYearly(false);
+								}}
+								outline={selectedYearly ? true : false}>
+								<span className="font-semibold">Monthly</span>
+							</Button>
+							<Button
+								onClick={() => {
+									setSelectedYearly(true);
+									setSelectedMonthly(false);
+								}}
+								outline={
+									selectedYearly ? false : selectedMonthly ? true : true
+								}>
+								<span className="font-semibold">Yearly</span>
 							</Button>
 						</div>
 					</HeadingText>
@@ -36,16 +65,22 @@ const Pricing = (props: Props) => {
 								subTitle={price.subHeading}
 								pricingCardList={price.fetures}
 								description={price.text}
-								price={price.price}
+								price={selectedYearly ? price.yearlyPrice : price.price}
 								billing={price.offerDuration}
+								navigateToGetStarted="/"
+								cardSelected={index === cardSelected ? true : false}
+								handleCardClick={() => handlePriceCardClick(index)}
 							/>
 						);
 					})}
 				</div>
-			</section>
-			<section className="grid lg:grid-cols-2 gap-12 bg-tertiary rounded-2xl p-8 md:p-16">
+			</motion.section>
+			<motion.section
+				className="grid lg:grid-cols-2 gap-12 bg-tertiary rounded-2xl p-8 md:p-16"
+				{...whileInviewFadeSlide}>
 				<div>
 					<HeadingText
+						customBackground={true}
 						placeLeft={true}
 						title="Frequestly Asked Questions"
 						description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
@@ -55,6 +90,7 @@ const Pricing = (props: Props) => {
 					{faqCardData.map((faq, index) => {
 						return (
 							<FaqCard
+								customBackground={true}
 								key={index}
 								question={faq.question}
 								answer={faq.answer}
@@ -62,9 +98,9 @@ const Pricing = (props: Props) => {
 						);
 					})}
 				</div>
-			</section>
+			</motion.section>
 			<ReadyToGrow />
-		</main>
+		</motion.main>
 	);
 };
 

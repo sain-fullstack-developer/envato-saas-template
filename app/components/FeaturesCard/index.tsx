@@ -7,10 +7,11 @@ type Props = {
 	title: string;
 	description: string;
 	logoUrl: string;
+	customBackground: boolean;
 };
 
 const FeaturesCard = (props: Props) => {
-	const { altText, title, description, logoUrl } = props;
+	const { altText, title, description, logoUrl, customBackground } = props;
 	return (
 		<div className="w-full flex flex-col gap-5">
 			<Image
@@ -20,10 +21,16 @@ const FeaturesCard = (props: Props) => {
 				alt={altText}
 				className="cursor-pointer m-auto sm:m-0"
 			/>
-			<p className="text-xl sm:text-3xl font-bold text-center sm:text-left">
+			<p
+				className={`text-xl sm:text-3xl font-bold text-center sm:text-left ${
+					customBackground && "dark:text-primary"
+				}`}>
 				{title}
 			</p>
-			<p className="text-paragraph leading-paragraph text-center sm:text-left">
+			<p
+				className={`${
+					customBackground && "dark:text-primary"
+				} text-paragraph leading-paragraph text-center sm:text-left`}>
 				{description}
 			</p>
 		</div>

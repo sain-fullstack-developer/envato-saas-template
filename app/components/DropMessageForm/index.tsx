@@ -4,7 +4,11 @@ import HeadingText from "../HeadingText/HeadingText";
 import CustomTextField from "../TextField";
 import Button from "../Button/Button";
 
-const DropMessageForm = () => {
+type DropType = {
+	customBackground: boolean;
+};
+
+const DropMessageForm = ({ customBackground }: DropType) => {
 	const [messageDetails, setMessageDetails] = React.useState({
 		fullname: "",
 		companyname: "",
@@ -21,18 +25,32 @@ const DropMessageForm = () => {
 			[event?.target?.name]: event?.target?.value,
 		});
 	};
+
+	const handleSubmit = (event: any) => {
+		event.preventDefault();
+
+		// you can post details to the server below
+
+		// for demo stroing to local storage can remove it
+
+		if (window !== undefined) {
+			localStorage.setItem("User-Details", JSON.stringify(messageDetails));
+		}
+	};
 	return (
 		<div>
 			<div className="pb-4">
 				<HeadingText
 					placeLeft
+					customBackground={customBackground ? customBackground : false}
 					title="Drop us a message"
 					description="We will get back to you as soon as possible."
 				/>
 			</div>
-			<form className="">
+			<form onSubmit={handleSubmit}>
 				<div className="flex flex-col md:flex-row gap-4 pb-4">
 					<CustomTextField
+						customBackground={true}
 						placeholder="Full name"
 						title="Full Name"
 						value={messageDetails.fullname}
@@ -40,6 +58,7 @@ const DropMessageForm = () => {
 						onChange={handleChange}
 					/>
 					<CustomTextField
+						customBackground={true}
 						placeholder="Company Name"
 						title="Company Name"
 						value={messageDetails.companyname}
@@ -49,6 +68,7 @@ const DropMessageForm = () => {
 				</div>
 				<div className="pb-4">
 					<CustomTextField
+						customBackground={true}
 						placeholder="Work email"
 						title="Work email"
 						value={messageDetails.workEmail}
@@ -58,6 +78,7 @@ const DropMessageForm = () => {
 				</div>
 				<div className="pb-4">
 					<CustomTextField
+						customBackground={true}
 						placeholder="Subject"
 						title="Subject"
 						value={messageDetails.subject}
@@ -67,12 +88,14 @@ const DropMessageForm = () => {
 				</div>
 				<div className="pb-4">
 					<textarea
-						className="bg-white outline-none rounded-lg py-5 px-6 w-full"
+						className={`bg-white ${
+							customBackground && "text-primary"
+						} outline-none rounded-lg py-5 px-6 w-full`}
 						placeholder="Message"
 						title="Message"
 						value={messageDetails.message}
 						name="message"
-						onChange={handleChange}
+						onChange={handleChange}	
 					/>
 				</div>
 				<div className="w-full">

@@ -30,6 +30,7 @@ export const pricingCardList = [
 		subHeading: "Start Plan",
 		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
 		price: "Free",
+		yearlyPrice: "$1200",
 		offerDuration: "For Limited Period",
 		logo: Images.pricing1,
 		fetures: [
@@ -55,6 +56,7 @@ export const pricingCardList = [
 		subHeading: "Start Plan",
 		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
 		price: "$342",
+		yearlyPrice: "$3420",
 		offerDuration: "For Limited Period",
 		logo: Images.pricing2,
 		fetures: [
@@ -80,6 +82,7 @@ export const pricingCardList = [
 		subHeading: "Start Plan",
 		text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr.",
 		price: "$234",
+		yearlyPrice: "$2340",
 		offerDuration: "For Limited Period",
 		logo: Images.pricing3,
 		fetures: [

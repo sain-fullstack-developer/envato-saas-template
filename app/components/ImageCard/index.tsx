@@ -11,6 +11,7 @@ type Props = {
 	title?: string;
 	text?: string;
 	altText?: string;
+	customBackground?: boolean;
 };
 
 const ImageCard = (props: Props) => {
@@ -23,6 +24,7 @@ const ImageCard = (props: Props) => {
 		text,
 		altText,
 		priority = false,
+		customBackground,
 	} = props;
 	return (
 		<div
@@ -35,11 +37,10 @@ const ImageCard = (props: Props) => {
 				}  relative`}>
 				<Image
 					src={imageUrl}
-					layout="fill"
-					objectFit="cover"
+					fill
 					className={`${
 						isImageOnly ? "rounded-3xl" : team ? "rounded-xl" : "rounded-2xl"
-					}  left-0`}
+					}  left-0 object-cover`}
 					alt={altText ? altText : "card-reference-pic"}
 					priority={priority}
 				/>
@@ -47,10 +48,23 @@ const ImageCard = (props: Props) => {
 
 			{!isImageOnly && (
 				<div className={`${team && "px-8 pb-4"}`}>
-					<h4 className="text-h4 leading-h4 font-bold">{title}</h4>
-					<p className="text-paragraph leading-paragraph">{text}</p>
+					<h4
+						className={`text-h4 leading-h4 font-bold ${
+							customBackground && "dark:text-primary"
+						}`}>
+						{title}
+					</h4>
+					<p
+						className={`text-paragraph leading-paragraph ${
+							customBackground && "dark:text-primary"
+						}`}>
+						{text}
+					</p>
 					{!team && (
-						<p className="text-paragraph leading-paragraph font-medium pt-2">
+						<p
+							className={`text-paragraph leading-paragraph font-medium pt-2 ${
+								customBackground && "dark:text-primary"
+							}`}>
 							{author}
 						</p>
 					)}

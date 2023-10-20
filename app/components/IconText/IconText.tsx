@@ -7,10 +7,11 @@ type Props = {
 	iconSrc: string;
 	description: string;
 	iconAltText: string;
+	customBackground?: boolean;
 };
 
 const IconText = (props: Props) => {
-	const { title, iconSrc, description, iconAltText } = props;
+	const { title, iconSrc, description, iconAltText, customBackground } = props;
 	return (
 		<div className="flex flex-col sm:flex-row gap-4 w-full items-center">
 			<Image
@@ -22,9 +23,17 @@ const IconText = (props: Props) => {
 			/>
 			<div className="text-center sm:text-left">
 				{title && (
-					<h4 className="text-h4 leading-h4 pb-2 font-bold">{title}</h4>
+					<h4
+						className={`${
+							customBackground && "text-primary"
+						} text-h4 leading-h4 pb-2 font-bold`}>
+						{title}
+					</h4>
 				)}
-				<p className={`text-xl ${title ? "font-base" : "font-medium"}`}>
+				<p
+					className={`${customBackground && "text-primary"} text-xl ${
+						title ? "font-base" : "font-medium"
+					}`}>
 					{description}
 				</p>
 			</div>

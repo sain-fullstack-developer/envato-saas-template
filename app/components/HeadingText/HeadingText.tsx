@@ -7,11 +7,19 @@ type Props = {
 	title?: string;
 	description?: string;
 	placeLeft?: boolean;
+	customBackground?: boolean;
 };
 
 const HeadingText = (props: Props) => {
-	const { children, caption, mainHeading, title, description, placeLeft } =
-		props;
+	const {
+		children,
+		caption,
+		mainHeading,
+		title,
+		description,
+		placeLeft,
+		customBackground,
+	} = props;
 	return (
 		<div
 			className={`${
@@ -25,19 +33,26 @@ const HeadingText = (props: Props) => {
 				</h4>
 			)}
 			{mainHeading ? (
-				<h1 className="text-4xl sm:text-h1 sm:leading-h1 font-bold pb-8">
+				<h1
+					className={`text-4xl sm:text-h1 sm:leading-h1 font-bold pb-8 ${
+						customBackground && "dark:text-primary"
+					}`}>
 					{mainHeading}
 				</h1>
 			) : (
 				<h2
 					className={`text-2xl 
-					
-					 sm:text-h2 sm:leading-h2 font-bold pb-8`}>
+					 sm:text-h2 sm:leading-h2 font-bold pb-8 ${
+							customBackground && "dark:text-primary"
+						}`}>
 					{title}
 				</h2>
 			)}
 
-			<p className={`text-paragraphLarge leading-paragraphLarge pb-12`}>
+			<p
+				className={`${
+					customBackground && "dark:text-primary"
+				} text-paragraphLarge leading-paragraphLarge pb-12`}>
 				{description}
 			</p>
 			{children ? children : null}

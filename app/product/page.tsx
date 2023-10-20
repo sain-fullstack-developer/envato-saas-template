@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeadingText from "../components/HeadingText/HeadingText";
 import Image from "next/image";
@@ -6,21 +7,34 @@ import { featuresCardData, logoImages, productServiceData } from "../constants";
 import FeaturesCard from "../components/FeaturesCard";
 import Images from "../constants/Images";
 import ReadyToGrow from "../components/ReadyToGrow";
+import { motion } from "framer-motion";
+import {
+	animatingFadeInout,
+	whileInviewFadeSlide,
+} from "../constants/FramerAnimations";
+import Link from "next/link";
 
 type Props = {};
 
 const Product = (props: Props) => {
 	return (
-		<main
-			className={`flex min-h-screen flex-col gap-y-32 items-center justify-between p-8 sm:p-14 md:p-24`}>
-			<section className="grid lg:grid-cols-2 gap-12">
+		<motion.main
+			className={`flex min-h-screen flex-col gap-y-32 items-center justify-between p-8 sm:p-14 md:p-24`}
+			{...animatingFadeInout}>
+			<motion.section
+				className="grid lg:grid-cols-2 gap-12"
+				{...whileInviewFadeSlide}>
 				<HeadingText
 					placeLeft
 					mainHeading="Grow your Sales and Services"
 					description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
 					<div className="flex gap-4">
-						<Button>Get Started</Button>
-						<Button outline={true}>Contact us</Button>
+						<Link href="/pricing">
+							<Button>Get Started</Button>
+						</Link>
+						<Link href="/contact">
+							<Button outline={true}>Contact us</Button>
+						</Link>
 					</div>
 				</HeadingText>
 				<Image
@@ -30,26 +44,35 @@ const Product = (props: Props) => {
 					alt="dashboard"
 					className="rounded-2xl"
 				/>
-			</section>
-			<section className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-20">
+			</motion.section>
+			<motion.section
+				className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-20"
+				{...whileInviewFadeSlide}>
 				{logoImages.map((list, index) => {
 					return (
-						<Image
-							key={index}
-							src={list.logo}
-							alt={`company-logos-${index}`}
-							width={196}
-							height={40}
-						/>
+						<div className="relative w-[196px] h-32">
+							<Image
+								key={index}
+								src={list.logo}
+								alt={`company-logos-${index}`}
+								fill
+							/>
+						</div>
 					);
 				})}
-			</section>
-			<section className="flex flex-col gap-12 p-6 sm:p-8 lg:p-20 rounded-2xl bg-tertiary">
-				<HeadingText title="Get the best out of your company with our service" />
+			</motion.section>
+			<motion.section
+				className="flex flex-col gap-12 p-6 sm:p-8 lg:p-20 rounded-2xl bg-tertiary"
+				{...whileInviewFadeSlide}>
+				<HeadingText
+					customBackground={true}
+					title="Get the best out of your company with our service"
+				/>
 				<div className="bg-white p-9 lg:p-16 rounded-3xl grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
 					{productServiceData.map((service, index) => {
 						return (
 							<FeaturesCard
+								customBackground={true}
 								key={index}
 								logoUrl={service.logo}
 								title={service.title}
@@ -59,8 +82,10 @@ const Product = (props: Props) => {
 						);
 					})}
 				</div>
-			</section>
-			<section className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl">
+			</motion.section>
+			<motion.section
+				className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl"
+				{...whileInviewFadeSlide}>
 				<HeadingText
 					placeLeft={true}
 					caption="Marketing insights"
@@ -74,8 +99,10 @@ const Product = (props: Props) => {
 					alt="dashboard"
 					className="rounded-2xl"
 				/>
-			</section>
-			<section className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl">
+			</motion.section>
+			<motion.section
+				className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl"
+				{...whileInviewFadeSlide}>
 				<Image
 					src={Images.productservicelg2}
 					width={1024}
@@ -89,8 +116,10 @@ const Product = (props: Props) => {
 					title="Track your project performance"
 					description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren."
 				/>
-			</section>
-			<section className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl">
+			</motion.section>
+			<motion.section
+				className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl"
+				{...whileInviewFadeSlide}>
 				<HeadingText
 					placeLeft={true}
 					caption="Lead Generation"
@@ -104,8 +133,10 @@ const Product = (props: Props) => {
 					alt="dashboard"
 					className="rounded-2xl"
 				/>
-			</section>
-			<section className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl">
+			</motion.section>
+			<motion.section
+				className="grid gap-9 lg:grid-cols-2 lg:gap-20 rounded-2xl"
+				{...whileInviewFadeSlide}>
 				<Image
 					src={Images.productservicelg2}
 					width={1024}
@@ -119,13 +150,14 @@ const Product = (props: Props) => {
 					title="Real-time collaboration"
 					description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren."
 				/>
-			</section>
-			<section className="flex flex-col">
+			</motion.section>
+			<motion.section className="flex flex-col" {...whileInviewFadeSlide}>
 				<HeadingText title="Features" />
 				<div className="bg-tertiary rounded-3xl p-8 sm:p-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
 					{featuresCardData.map((feature, index) => {
 						return (
 							<FeaturesCard
+								customBackground={true}
 								key={index}
 								logoUrl={feature.logo}
 								title={feature.title}
@@ -135,9 +167,9 @@ const Product = (props: Props) => {
 						);
 					})}
 				</div>
-			</section>
+			</motion.section>
 			<ReadyToGrow />
-		</main>
+		</motion.main>
 	);
 };
 

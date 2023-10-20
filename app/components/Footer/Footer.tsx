@@ -1,16 +1,27 @@
+"use client";
 import { footerLists } from "@/app/constants";
 import React from "react";
 import { BiLogoFacebookCircle } from "react-icons/bi";
 import { AiFillTwitterCircle } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { CiLinkedin } from "react-icons/ci";
+import { motion } from "framer-motion";
+import {
+	whileInviewFadeInout,
+	whileInviewFadeSlide,
+} from "@/app/constants/FramerAnimations";
+import Link from "next/link";
 
 type Props = {};
 
 const Footer = (props: Props) => {
 	return (
-		<footer className="bg-primary p-20 px-16 md:px-32 lg:px-40 md:py-32 z-10">
-			<div className="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center sm:place-items-baseline gap-6">
+		<motion.footer
+			className="bg-primary p-20 px-16 md:px-32 lg:px-40 md:py-32 z-10"
+			{...whileInviewFadeInout}>
+			<motion.div
+				className="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center sm:place-items-baseline gap-6"
+				{...whileInviewFadeSlide}>
 				{footerLists.map((data, index) => {
 					return (
 						<div
@@ -26,13 +37,17 @@ const Footer = (props: Props) => {
 					);
 				})}
 				<div className="text-center sm:text-left">
-					<h2 className={`text-h4 leading-h4 text-white pb-9`}>Enhance</h2>
+					<Link href="/">
+						<h2 className={`text-h4 leading-h4 text-white pb-9`}>Enhance</h2>
+					</Link>
 					<p className="text-white text-paragraphLarge leading-paragraphLarge pb-4">
 						Subscribe to our Newsletter
 					</p>
 				</div>
-			</div>
-			<div className="grid lg:grid-cols-3 gap-4 pt-14 place-items-center">
+			</motion.div>
+			<motion.div
+				className="grid lg:grid-cols-3 gap-4 pt-14 place-items-center"
+				{...whileInviewFadeSlide}>
 				<div className="h-[1px] bg-white/40 w-full"></div>
 				<div className="flex flex-col sm:flex-row gap-4">
 					<p className="text-white/40 text-xs">© Copyright Finsweet 2022</p>
@@ -44,8 +59,8 @@ const Footer = (props: Props) => {
 					</div>
 				</div>
 				<div className="h-[1px] bg-white/40 w-full"></div>
-			</div>
-		</footer>
+			</motion.div>
+		</motion.footer>
 	);
 };
 

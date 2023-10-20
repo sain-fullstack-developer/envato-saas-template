@@ -7,6 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React from "react";
+import { motion } from "framer-motion";
+import {
+	animatingFadeInout,
+	whileInviewFadeSlide,
+} from "@/app/constants/FramerAnimations";
 
 const BlogPost = () => {
 	const { id }: any = useParams();
@@ -21,8 +26,12 @@ const BlogPost = () => {
 		headlineDescription2,
 	} = blogPostsData[index];
 	return (
-		<main className={`flex flex-col gap-y-32 p-8 sm:p-14 lg:p-24`}>
-			<section className="flex flex-col gap-10 md:gap-20">
+		<motion.main
+			className={`flex flex-col gap-y-32 p-8 sm:p-14 lg:p-24`}
+			{...animatingFadeInout}>
+			<motion.section
+				className="flex flex-col gap-10 md:gap-20"
+				{...whileInviewFadeSlide}>
 				<HeadingText title={title}>{author}</HeadingText>
 				<div>
 					<Image
@@ -34,8 +43,8 @@ const BlogPost = () => {
 						className="rounded-xl"
 					/>
 				</div>
-			</section>
-			<section className="flex flex-col gap-7">
+			</motion.section>
+			<motion.section className="flex flex-col gap-7" {...whileInviewFadeSlide}>
 				<HeadingText
 					title={headlineTitle1}
 					description={headlineDescription1}
@@ -44,8 +53,10 @@ const BlogPost = () => {
 					title={headlineTitle2}
 					description={headlineDescription2}
 				/>
-			</section>
-			<section className="flex flex-col gap-12">
+			</motion.section>
+			<motion.section
+				className="flex flex-col gap-12"
+				{...whileInviewFadeSlide}>
 				<HeadingText title="Read more posts" />
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
 					{blogPostsData?.slice(0, 3)?.map((card, index) => {
@@ -62,9 +73,9 @@ const BlogPost = () => {
 						);
 					})}
 				</div>
-			</section>
+			</motion.section>
 			<ReadyToGrow />
-		</main>
+		</motion.main>
 	);
 };
 

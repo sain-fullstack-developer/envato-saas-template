@@ -3,10 +3,13 @@ import Image from "next/image";
 import React from "react";
 import HeadingText from "../HeadingText/HeadingText";
 import Button from "../Button/Button";
+import { motion } from "framer-motion";
+import { whileInviewFadeSlide } from "@/app/constants/FramerAnimations";
+import Link from "next/link";
 
 const ReadyToGrow = () => {
 	return (
-		<section className="w-full relative pb-20">
+		<motion.section className="w-full relative pb-20" {...whileInviewFadeSlide}>
 			<Image
 				src={Images.gradientBg}
 				className="absolute inset-0 tranform -z-10 m-auto"
@@ -18,10 +21,12 @@ const ReadyToGrow = () => {
 				title="Are you ready to grow your business with us?"
 				description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.">
 				<div>
-					<Button>View Pricing</Button>
+					<Link href="/pricing">
+						<Button>View Pricing</Button>
+					</Link>
 				</div>
 			</HeadingText>
-		</section>
+		</motion.section>
 	);
 };
 

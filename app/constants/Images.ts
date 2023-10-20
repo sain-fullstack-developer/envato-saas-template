@@ -1,4 +1,5 @@
 export default {
+	homedashboard: "/home-dashboard.svg",
 	circleArrow: "/circlearrow-icon.svg",
 	security: "/home-icon-1.svg",
 	quality: "/home-icon-2.svg",

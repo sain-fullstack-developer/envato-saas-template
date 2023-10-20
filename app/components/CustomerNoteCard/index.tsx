@@ -21,10 +21,9 @@ const CustomerNoteCard = (props: Props) => {
 				<div className="w-14 h-14 rounded-full relative">
 					<Image
 						src={profileUrl}
-						layout="fill"
-						objectFit="cover"
+						fill
 						alt={altText}
-						className="rounded-full"
+						className="rounded-full object-cover"
 					/>
 				</div>
 				<p className="text-xl font-semibold">{name}</p>
