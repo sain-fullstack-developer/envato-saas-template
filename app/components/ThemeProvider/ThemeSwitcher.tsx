@@ -10,6 +10,7 @@ export const ThemeSwitcher = () => {
 
 	useEffect(() => {
 		setMounted(true);
+		setTheme("light");
 	}, []);
 
 	if (!mounted) {
@@ -17,7 +18,7 @@ export const ThemeSwitcher = () => {
 	}
 
 	return (
-		<div className="absolute left-10 top-[28px]">
+		<div>
 			{theme === "dark" ? (
 				<BsSun size={25} cursor="pointer" onClick={() => setTheme("light")} />
 			) : (

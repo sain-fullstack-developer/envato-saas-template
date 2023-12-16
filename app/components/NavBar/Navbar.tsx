@@ -31,10 +31,15 @@ const Navbar = () => {
 			className={`flex justify-between pt-3 px-10 sm:px-20 sticky top-0 left-0 w-full z-40 ${
 				navScrollAdd && "lg:bg-white/10 backdrop-blur-sm"
 			}`}>
-			<Link href="/">
-				<h2 className={`text-h4 leading-h2 font-bold`}>Enhance</h2>
-			</Link>
-			<ThemeSwitcher />
+			<div className="flex">
+				<div className=" mr-4 mt-4">
+					<ThemeSwitcher />
+				</div>
+				<Link href="/">
+					<h2 className={`text-h4 leading-h2 font-bold`}>Enhance</h2>
+				</Link>
+			</div>
+
 			{!toggleMenuList && (
 				<div
 					onClick={openMenu}
@@ -59,6 +64,7 @@ const Navbar = () => {
 				)}
 				<ul role="menu" className={`lg:flex lg:gap-10`}>
 					{navMenuList.map((list, index) => {
+						
 						return (
 							<li
 								className="pb-8 text-center lg:mt-2 text-h4 leading-h4 lg:text-paragraph lg:leading-paragraph"

@@ -46,14 +46,14 @@ export default function Home() {
 
 	return (
 		<>
-			{isLoading && <Intro />}
+			{isLoading &&  <Intro />}
 			{!isLoading && (
 				<motion.main
 					className={`flex min-h-screen flex-col gap-y-32 items-center justify-center p-8 sm:p-14 md:p-24`}>
 					<motion.section className="w-full lg:min-h-screen place-items-center flex flex-col gap-16 relative">
 						<Image
 							src={Images.gradientBg}
-							className="absolute inset-0 tranform -z-10 m-auto"
+									className="absolute inset-0 tranform -z-10 m-auto"
 							width={800}
 							height={800}
 							alt="gradient-background"

@@ -11,6 +11,7 @@ import {
 	animatingFadeInout,
 	whileInviewFadeSlide,
 } from "../constants/FramerAnimations";
+import { useTheme } from "next-themes";
 
 type Props = {};
 
@@ -18,6 +19,7 @@ const Pricing = (props: Props) => {
 	const [selectedMonthly, setSelectedMonthly] = React.useState(true);
 	const [selectedYearly, setSelectedYearly] = React.useState(false);
 	const [cardSelected, setCardSelected] = React.useState(1);
+	const { theme } = useTheme();
 	function handlePriceCardClick(index: number) {
 		setCardSelected(index);
 	}
@@ -32,7 +34,10 @@ const Pricing = (props: Props) => {
 					<HeadingText
 						title="Pricing plans that suit you"
 						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.">
-						<div className="bg-tertiary rounded-3xl p-2 flex justify-around w-1/2 m-auto">
+						<div
+							className={`${
+								theme === "dark" ? "bg-secondary" : "bg-tertiary"
+							} rounded-3xl p-2 flex justify-around w-1/2 m-auto`}>
 							<Button
 								onClick={() => {
 									setSelectedMonthly(true);
