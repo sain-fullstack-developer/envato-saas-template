@@ -61,7 +61,7 @@ const BlogPost = () => {
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6">
 					{blogPostsData?.slice(0, 3)?.map((card, index) => {
 						return (
-							<Link key={index} href={`blog/${index}`}>
+							<Link key={index} href={`/blog/${index}`}>
 								<ImageCard
 									imageUrl={card.logo}
 									title={card.title}
